@@ -1,0 +1,1 @@
+aws lambda invoke --invocation-type RequestResponse --function-name minimal_lambda_function --region us-west-1 --log-type Tail --payload '{"key1":"value1", "key2":"value2", "key3":"value3"}' outputfile.txt | jq .LogResult | sed 's/"//g' | base64 --decode
